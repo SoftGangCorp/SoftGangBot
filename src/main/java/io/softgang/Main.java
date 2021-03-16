@@ -10,7 +10,7 @@ import net.dv8tion.jda.api.utils.cache.CacheFlag;
 
 public class Main {
     public static void main(String[] args) {
-       JDABuilder builder = JDABuilder.createDefault(System.getProperty("BOT_TOKEN"));
+       JDABuilder builder = JDABuilder.createDefault(System.getenv("BOT_TOKEN"));
 
         // Disable parts of the cache
         builder.disableCache(CacheFlag.MEMBER_OVERRIDES, CacheFlag.VOICE_STATE);
@@ -19,7 +19,7 @@ public class Main {
         // Disable compression (not recommended)
         builder.setCompression(Compression.NONE);
         // Set activity (like "playing Something")
-        builder.setActivity(Activity.watching("Googleeeee"));
+        builder.setActivity(Activity.watching("Google"));
 
         try {
             builder
