@@ -9,7 +9,7 @@ import net.dv8tion.jda.api.utils.cache.CacheFlag;
 
 public class Main {
     public static void main(String[] args) {
-       JDABuilder builder = JDABuilder.createDefault("ODIxMDk0MjgyOTkxMjM5MTg5.YE-tpA.hKIQn4_982xTRCgbRURzxpPqnC8");
+       JDABuilder builder = JDABuilder.createDefault("ODIxMDk0MjgyOTkxMjM5MTg5.YE-tpA.FG8uqBqkAPMiMelrNEAAENgQofs");
 
         // Disable parts of the cache
         builder.disableCache(CacheFlag.MEMBER_OVERRIDES, CacheFlag.VOICE_STATE);
@@ -24,6 +24,7 @@ public class Main {
             builder
                     .addEventListeners(new PingListener())
                     .addEventListeners(new BitcoinListener())
+                    .addEventListeners(new KaapseDictionaryListener())
                     .build();
         }
         catch (Exception except){
