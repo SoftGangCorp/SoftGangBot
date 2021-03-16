@@ -1,4 +1,4 @@
-package io.softgang.model;
+package io.softgang.crypto.model;
 
 public class PriceData {
     private String disclaimer;

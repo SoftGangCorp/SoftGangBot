@@ -1,4 +1,4 @@
-package io.softgang.model;
+package io.softgang.dictionary.model;
 
 public class WordIndexData {
     private String[] name;

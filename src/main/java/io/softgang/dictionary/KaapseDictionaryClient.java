@@ -1,17 +1,15 @@
-package io.softgang;
+package io.softgang.dictionary;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import io.softgang.model.PriceData;
+import io.softgang.dictionary.model.WordData;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
 
-public class BitcoinClient {
-    public PriceData getBitcoinPrice() throws Exception {
-        URL url = new URL("https://api.coindesk.com/v1/bpi/currentprice/usd.json");
+public class KaapseDictionaryClient {
+    public WordData getRandomWord() throws Exception {
+        URL url = new URL("https://kaapsedictionary.co.za/api/random");
 
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
@@ -22,20 +20,20 @@ public class BitcoinClient {
             throw new RuntimeException("HttpResponseCode: " + responsecode);
         } else {
 
-            String inline = "";
+            String word = "";
             Scanner scanner = new Scanner(url.openStream());
 
             //Write all the JSON data into a string using a scanner
             while (scanner.hasNext()) {
-                inline += scanner.nextLine();
+                word += scanner.nextLine();
             }
 
             //Close the scanner
             scanner.close();
-            System.out.println(inline);
+            System.out.println(word);
             Gson gson = new Gson();
-            PriceData priceData = gson.fromJson(inline, PriceData.class);
-            return priceData;
+            WordData wordData = gson.fromJson(word, WordData.class);
+            return wordData;
 
         }
 
