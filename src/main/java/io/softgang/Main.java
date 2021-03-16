@@ -1,7 +1,8 @@
 package io.softgang;
 
 
-import io.softgang.model.PriceData;
+import io.softgang.crypto.BitcoinListener;
+import io.softgang.dictionary.KaapseDictionaryListener;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.utils.Compression;
