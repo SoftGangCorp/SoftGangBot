@@ -39,7 +39,7 @@ public class BitcoinListener extends ListenerAdapter {
                 .getGuildById("476683371179802625")
                 .getTextChannelById("772206231976411146");
         ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
-        executorService.scheduleAtFixedRate(() -> sendBitcoinPrice(channel), 0, 30, TimeUnit.SECONDS);
+        executorService.scheduleAtFixedRate(() -> sendBitcoinPrice(channel), 0, 4, TimeUnit.HOURS);
     }
 
     public void sendBitcoinPrice(TextChannel channel) {
@@ -48,7 +48,7 @@ public class BitcoinListener extends ListenerAdapter {
             float price = priceData.getBpi().getUSD().getRate_float();
             double change = getPercentageDifference(Double.valueOf(price));
             DecimalFormat df = new DecimalFormat("#.##");
-            MessageAction action = channel.sendMessage("The price of Bitcoin in USD is: " + df.format(price)+ " change: " + df.format(change) + "%");
+            MessageAction action = channel.sendMessage("The price of Bitcoin is: $" + df.format(price)+ " change: " + df.format(change) + "%");
             action.queue();
         } catch (Exception e) {
             channel.sendMessage("Kak isn't working.").queue();
