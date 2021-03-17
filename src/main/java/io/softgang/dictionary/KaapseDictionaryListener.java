@@ -7,6 +7,10 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 public class KaapseDictionaryListener extends ListenerAdapter {
+    private KaapseDictionaryClient client;
+    public KaapseDictionaryListener(KaapseDictionaryClient client) {
+        this.client = client;
+    }
     @Override
     public void onMessageReceived(MessageReceivedEvent event)
     {
@@ -14,7 +18,6 @@ public class KaapseDictionaryListener extends ListenerAdapter {
         if (msg.getContentRaw().equals("-random"))
         {
             MessageChannel channel = event.getChannel();
-            KaapseDictionaryClient client=new KaapseDictionaryClient();
             try {
                 WordData wordData = client.getRandomWord();
                 String wordId = wordData.getId();
