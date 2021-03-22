@@ -5,6 +5,8 @@ import io.softgang.crypto.BitcoinClient;
 import io.softgang.crypto.BitcoinListener;
 import io.softgang.dictionary.KaapseDictionaryClient;
 import io.softgang.dictionary.KaapseDictionaryListener;
+import io.softgang.exchange.ExchangeClient;
+import io.softgang.exchange.ExchangeListener;
 import io.softgang.greeting.GreetingListener;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
@@ -35,6 +37,7 @@ public class Main {
                     .addEventListeners(new KaapseDictionaryListener(new KaapseDictionaryClient()))
                     .addEventListeners(new BitcoinListener(new BitcoinClient()))
                     .addEventListeners(new GreetingListener())
+                    .addEventListeners(new ExchangeListener(new ExchangeClient()))
                     .build();
         }
         catch (Exception except){
