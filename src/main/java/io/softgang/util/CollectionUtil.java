@@ -8,7 +8,7 @@ public class CollectionUtil {
         String [] inputStrings = inputStr.split(" ");
         return Arrays.stream(inputStrings)
                 .anyMatch(word -> Arrays.stream(items)
-                        .anyMatch(item -> item.contains(word.toLowerCase().trim())));
+                        .anyMatch(item -> item.equals(word.toLowerCase().trim())));
     }
 }
 

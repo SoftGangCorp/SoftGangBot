@@ -28,4 +28,10 @@ public class CollectionUtilTest extends TestCase {
         boolean contains = CollectionUtil.stringContainsItemFromList("theo",test);
         assertFalse(contains);
     }
+    @Test
+    public void testStringContainsItemFromList_fullWord() {
+        String [] test = {"the", "and", "that"};
+        boolean contains = CollectionUtil.stringContainsItemFromList("th",test);
+        assertFalse(contains);
+    }
 }
