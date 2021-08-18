@@ -8,6 +8,8 @@ import io.softgang.dictionary.KaapseDictionaryListener;
 import io.softgang.exchange.ExchangeClient;
 import io.softgang.exchange.ExchangeListener;
 import io.softgang.greeting.GreetingListener;
+import io.softgang.weather.WeatherClient;
+import io.softgang.weather.WeatherListener;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.requests.GatewayIntent;
@@ -38,6 +40,7 @@ public class Main {
                     .addEventListeners(new BitcoinListener(new BitcoinClient()))
                     .addEventListeners(new GreetingListener())
                     .addEventListeners(new ExchangeListener(new ExchangeClient()))
+                    .addEventListeners(new WeatherListener(new WeatherClient()))
                     .build();
         }
         catch (Exception except){

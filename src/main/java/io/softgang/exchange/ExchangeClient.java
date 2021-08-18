@@ -6,7 +6,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
 
-public class ExchangeClient {
+public class  ExchangeClient {
     public ExchangeData getExchangeRate() throws Exception {
 
         URL url = new URL("https://api.exchangeratesapi.io/latest?base=ZAR");
