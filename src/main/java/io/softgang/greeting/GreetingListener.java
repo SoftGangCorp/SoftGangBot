@@ -25,5 +25,7 @@ public class GreetingListener extends ListenerAdapter {
                     .sendMessage(event.getMember().getAsMention() + " nobody cares, shut the bloody hell up")
                     .queue();
         }
+
     }
+
 }
