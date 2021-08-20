@@ -12,7 +12,14 @@ public class PingListener extends ListenerAdapter {
     public void onMessageReceived(MessageReceivedEvent event) {
         if (!event.getMember().getUser().isBot()) {
             Message msg = event.getMessage();
-            if (CollectionUtil.stringContainsItemFromList(msg.getContentRaw(), swearWords)) {
+
+            if(event.getMember().getUser().getId().equals("195588825240698880") && CollectionUtil.stringContainsItemFromList(msg.getContentRaw(), swearWords))
+            {
+                event.getChannel()
+                        .sendMessage(event.getMember().getAsMention() + " you better than this")
+                        .queue();
+            }
+            else if (CollectionUtil.stringContainsItemFromList(msg.getContentRaw(), swearWords)) {
                 MessageChannel channel = event.getChannel();
                 channel.sendMessage("Jy stop swearing you naai") /* => RestAction<Message> */
                         .queue();
@@ -20,3 +27,5 @@ public class PingListener extends ListenerAdapter {
         }
     }
 }
+
+
