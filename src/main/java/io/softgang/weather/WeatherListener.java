@@ -38,7 +38,7 @@ public class WeatherListener extends ListenerAdapter {
     public void onReady(ReadyEvent event) {
         TextChannel channel = event.getJDA()
                 .getGuildById("476683371179802625")
-                .getTextChannelById("758351138449391686");
+                .getTextChannelById("772206231976411146");
 
         ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
         LocalDateTime midNight = LocalDate.now().atStartOfDay();
