@@ -13,16 +13,7 @@ public class GreetingListener extends ListenerAdapter {
             event.getJDA()
                     .getGuildById("476683371179802625")
                     .getTextChannelById("772206231976411146")
-                    .sendMessage("@here " + event.getMember().getAsMention() + " started playing " + event.getNewActivity().getName() + ", JOIN THE FUCK UP!")
-                    .queue();
-        }
-    }
-
-    @Override
-    public void onUserTyping(UserTypingEvent event) {
-        if(event.getMember().getUser().getId().equals("582212162970189841")) {
-            event.getChannel()
-                    .sendMessage(event.getMember().getAsMention() + " nobody cares, shut the bloody hell up")
+                    .sendMessage("Yo!" + event.getMember().getAsMention() + " started playing " + event.getNewActivity().getName() + ", JOIN THE FUCK UP!")
                     .queue();
         }
     }

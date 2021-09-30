@@ -1,6 +1,7 @@
 package io.softgang;
 
 
+import io.softgang.botInfo.BotInfoListener;
 import io.softgang.crypto.BitcoinClient;
 import io.softgang.crypto.BitcoinListener;
 import io.softgang.dictionary.KaapseDictionaryClient;
@@ -35,7 +36,7 @@ public class Main {
 
         try {
             builder
-                    .addEventListeners(new PingListener())
+                    .addEventListeners(new BotInfoListener())
                     .addEventListeners(new KaapseDictionaryListener(new KaapseDictionaryClient()))
                     .addEventListeners(new BitcoinListener(new BitcoinClient()))
                     .addEventListeners(new GreetingListener())
