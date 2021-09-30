@@ -16,5 +16,7 @@ public class GreetingListener extends ListenerAdapter {
                     .sendMessage("Yo!" + event.getMember().getAsMention() + " started playing " + event.getNewActivity().getName() + ", JOIN THE FUCK UP!")
                     .queue();
         }
+
     }
+
 }
